@@ -40,6 +40,7 @@
     _contentScrollview.pagingEnabled = YES;
     _contentScrollview.delegate = self;
     _contentScrollview.showsHorizontalScrollIndicator = NO;
+    _contentScrollview.bounces = false;
     //方向锁
     _contentScrollview.directionalLockEnabled = YES;
     //取消自动布局
@@ -54,17 +55,26 @@
     self.first = [storyBoard instantiateViewControllerWithIdentifier:@"FirstViewController"];
     self.second = [storyBoard instantiateViewControllerWithIdentifier:@"SecondViewController"];
     
-    //指定该控制器为其子控制器
-    [self addChildViewController:_first];
-    [self addChildViewController:_second];
-    //将视图view加入到scrollview上
-    [_contentScrollview addSubview:_first.view];
-    [_contentScrollview addSubview:_second.view];
-    //设置两个控制器的  位置
-    CGRect secondRect = _second.view.frame;
-    secondRect.origin.x = SCREEN_WIDTH;
-    secondRect.size.height = CGRectGetHeight(_contentScrollview.frame);
-    _second.view.frame = secondRect;
+//    //指定该控制器为其子控制器
+//    [self addChildViewController:_first];
+//    [self addChildViewController:_second];
+//    //将视图view加入到scrollview上
+//    [_contentScrollview addSubview:_first.view];
+//    [_contentScrollview addSubview:_second.view];
+//    //设置两个控制器的  位置
+//    CGRect secondRect = _second.view.frame;
+//    secondRect.origin.x = SCREEN_WIDTH;
+//    secondRect.size.height = CGRectGetHeight(_contentScrollview.frame);
+//    _second.view.frame = secondRect;
+    
+    NSMutableArray* vcs = [NSMutableArray array];
+    [vcs addObject:self.first];
+    [vcs addObject:self.second];
+    for (int i = 0;i< vcs.count; i ++) {
+        UIViewController* vc = vcs[i];
+        vc.view.frame = CGRectMake(i * SCREEN_WIDTH, 0, CGRectGetWidth(_contentScrollview.frame), CGRectGetHeight(_contentScrollview.frame));
+        [_contentScrollview addSubview:vc.view];
+    }
 }
 
 #pragma mark - Scrollview delegate
