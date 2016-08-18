@@ -10,8 +10,8 @@
 #import "FirstViewController.h"
 #import "SecondViewController.h"
 
-#define SCREEN_WIDTH   CGRectGetWidth([UIScreen  mainScreen].bounds)
-#define SCRENN_HEIGHT  CGRectGetHeight([UIScreen mainScreen].bounds)
+#define kSCREEN_WIDTH   CGRectGetWidth([UIScreen  mainScreen].bounds)
+#define kSCRENN_HEIGHT  CGRectGetHeight([UIScreen mainScreen].bounds)
 
 @interface ViewController ()<UIScrollViewDelegate>
 @property (weak, nonatomic ) IBOutlet UISegmentedControl   *headerSegment;
@@ -37,6 +37,7 @@
     [_contentScrollview scrollRectToVisible:frame animated:YES];
 }
 -(void)setUpScrollView{
+    [_contentScrollview setFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kSCRENN_HEIGHT - 66)];
     _contentScrollview.pagingEnabled = YES;
     _contentScrollview.delegate = self;
     _contentScrollview.showsHorizontalScrollIndicator = NO;
@@ -45,7 +46,8 @@
     _contentScrollview.directionalLockEnabled = YES;
     //取消自动布局
     self.automaticallyAdjustsScrollViewInsets = NO;
-    _contentScrollview.contentSize = CGSizeMake(SCREEN_WIDTH * 2, SCRENN_HEIGHT - 64);
+    //为scrollview设置大小  需要计算调整
+    _contentScrollview.contentSize = CGSizeMake(kSCREEN_WIDTH * 2, kSCRENN_HEIGHT - 66);
 }
 /**
  *  设置控制的每一个子控制器
@@ -60,7 +62,8 @@
     [vcs addObject:self.second];
     for (int i = 0;i< vcs.count; i ++) {
         UIViewController* vc = vcs[i];
-        vc.view.frame = CGRectMake(i * SCREEN_WIDTH, 0, CGRectGetWidth(_contentScrollview.frame), CGRectGetHeight(_contentScrollview.frame));
+        //设置view的大小为contentScrollview单个页面的大小
+        vc.view.frame = CGRectMake(i * kSCREEN_WIDTH, 0, kSCREEN_WIDTH, CGRectGetHeight(_contentScrollview.frame));
         [_contentScrollview addSubview:vc.view];
     }
 }
@@ -68,7 +71,7 @@
 #pragma mark - Scrollview delegate
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     CGFloat offSetX = scrollView.contentOffset.x;
-    NSInteger ratio = round(offSetX / SCREEN_WIDTH);
+    NSInteger ratio = round(offSetX / kSCREEN_WIDTH);
     _headerSegment.selectedSegmentIndex = ratio;
 }
 - (void)didReceiveMemoryWarning {

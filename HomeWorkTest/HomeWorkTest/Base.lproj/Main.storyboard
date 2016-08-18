@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qa0-3p-9ck">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qa0-3p-9ck">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -67,14 +67,26 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="he9-Bq-G4m">
                                         <rect key="frame" x="540" y="559.5" width="42" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itt-WC-aer">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="42" id="13F-ZN-O4T"/>
+                                            <constraint firstAttribute="height" constant="21" id="rb3-AT-RYL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.57931955467688245" blue="0.068739912211058574" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="Itt-WC-aer" firstAttribute="top" secondItem="sSC-7o-nRP" secondAttribute="top" id="F0u-Fy-p5n"/>
                                     <constraint firstAttribute="trailing" secondItem="he9-Bq-G4m" secondAttribute="trailing" constant="18" id="IG9-kC-Vl2"/>
                                     <constraint firstAttribute="bottom" secondItem="he9-Bq-G4m" secondAttribute="bottom" id="Q6k-iA-MA5"/>
+                                    <constraint firstItem="Itt-WC-aer" firstAttribute="leading" secondItem="sSC-7o-nRP" secondAttribute="leading" id="yvE-4M-JvQ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -110,6 +122,16 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zO-kH-It3">
                                         <rect key="frame" x="527" y="559.5" width="42" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFe-b1-Eck">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="HxP-mN-dLw"/>
+                                            <constraint firstAttribute="width" constant="42" id="yBC-KQ-IRt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -118,6 +140,8 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="0zO-kH-It3" secondAttribute="bottom" id="5IH-Qo-7k8"/>
                                     <constraint firstAttribute="trailing" secondItem="0zO-kH-It3" secondAttribute="trailing" constant="31" id="ANT-ru-w9v"/>
+                                    <constraint firstItem="aFe-b1-Eck" firstAttribute="top" secondItem="zvU-gf-pg9" secondAttribute="top" id="LEJ-lt-hK7"/>
+                                    <constraint firstItem="aFe-b1-Eck" firstAttribute="leading" secondItem="zvU-gf-pg9" secondAttribute="leading" id="b1D-9V-Hnf"/>
                                 </constraints>
                             </view>
                         </subviews>

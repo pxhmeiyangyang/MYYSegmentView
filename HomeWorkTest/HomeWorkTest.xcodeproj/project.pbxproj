@@ -426,6 +426,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HomeWorkTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yxcps.HomeWorkTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -437,6 +438,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HomeWorkTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yxcps.HomeWorkTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -510,6 +512,7 @@
 				F17172321CB8B76A002F2B0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F17172331CB8B76A002F2B0F /* Build configuration list for PBXNativeTarget "HomeWorkTestTests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +521,7 @@
 				F17172351CB8B76A002F2B0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F17172361CB8B76A002F2B0F /* Build configuration list for PBXNativeTarget "HomeWorkTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +530,7 @@
 				F17172381CB8B76A002F2B0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
